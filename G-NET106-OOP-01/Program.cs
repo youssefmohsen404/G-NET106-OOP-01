@@ -1,4 +1,5 @@
 ﻿using G_NET106_OOP_01.part1_Q1;
+using G_NET106_OOP_01.part1_Q2;
 
 namespace G_NET106_OOP_01
 {
@@ -11,25 +12,25 @@ namespace G_NET106_OOP_01
             //struct DeliveryAddress 
             //A:What happens when a DeliveryAddress variable is copied into another variable and the copy is modified?
 
-           /* DeliveryAddress dA1 = new DeliveryAddress()
-            {
-                city = "alexandria",
-                street = "street1"
-            };
-            DeliveryAddress dA2 = new DeliveryAddress()
-            {
-                city = "cairo",
-                street = "street2"
-            };
-            dA2 = dA1;
-            Console.WriteLine(dA1.street);
-            Console.WriteLine(dA2.street);
+            /* DeliveryAddress dA1 = new DeliveryAddress()
+             {
+                 city = "alexandria",
+                 street = "street1"
+             };
+             DeliveryAddress dA2 = new DeliveryAddress()
+             {
+                 city = "cairo",
+                 street = "street2"
+             };
+             dA2 = dA1;
+             Console.WriteLine(dA1.street);
+             Console.WriteLine(dA2.street);
 
-            string city = "tanta";
-            dA2.city = city;
-            Console.WriteLine("after modifing the second object");
-            Console.WriteLine(dA1.city);
-            Console.WriteLine(dA2.city);*/
+             string city = "tanta";
+             dA2.city = city;
+             Console.WriteLine("after modifing the second object");
+             Console.WriteLine(dA1.city);
+             Console.WriteLine(dA2.city);*/
 
 
             // the only object i modified it's value changed and th other object value stays 
@@ -39,28 +40,42 @@ namespace G_NET106_OOP_01
             #region B
             //  class Customer 
             //B: What happens when a Customer variable is copied into another variable and one variable modifies the object
-/*
-            Customer c1 = new Customer() {
-                name  = "youssef"
-            };
-            Customer c2 = new Customer() {
-                name  = "mohamed"
-            };
-            c2 = c1;
-            Console.WriteLine(c1.name);
-            Console.WriteLine(c2.name);
+            /*
+                        Customer c1 = new Customer() {
+                            name  = "youssef"
+                        };
+                        Customer c2 = new Customer() {
+                            name  = "mohamed"
+                        };
+                        c2 = c1;
+                        Console.WriteLine(c1.name);
+                        Console.WriteLine(c2.name);
 
-            string name = "ahmed";
-            c2.name = name;
-            Console.WriteLine("After modifing c2 name");
-            Console.WriteLine(c1.name);
-            Console.WriteLine(c2.name);*/
+                        string name = "ahmed";
+                        c2.name = name;
+                        Console.WriteLine("After modifing c2 name");
+                        Console.WriteLine(c1.name);
+                        Console.WriteLine(c2.name);*/
 
 
             // so when object 2 value is modified the value of the 2 objects takes this modified value 
             // cause the class is a reference type so the data is stored in the heap pointing to the same object in the heap
 
 
+            #endregion
+            #endregion
+
+            #region part1 - Q2
+            // struct shipment 
+            #region A
+            //A:Identify at least three problems with this design from an encapsulation perspective.
+            // 1.any one can edit on the senstive data with any value whether it validated or not
+            // 2.any one can print or get the value of any field whether it is a private data or not
+            // 3. there is no easy maintainability and the encapsulation reduces bugs
+            #endregion
+            #region B
+            //How can private fields and public properties improve this design?
+            // i edited the struct with encapsulating fields
             #endregion
             #endregion
         }
