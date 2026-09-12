@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,9 +7,9 @@ namespace G_NET106_OOP_01.part1_Q2
     internal struct Shipment
     {
         //without encapsulation
-       /* public string description;
+       *//* public string description;
         public double weight;
-        public decimal deliveryFee;*/
+        public decimal deliveryFee;*//*
 
         //with encapsulation
         private string _describtion;
@@ -53,3 +53,4 @@ namespace G_NET106_OOP_01.part1_Q2
 
     }
 }
+*/

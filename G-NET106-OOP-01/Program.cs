@@ -1,5 +1,6 @@
-﻿using G_NET106_OOP_01.part1_Q1;
-using G_NET106_OOP_01.part1_Q2;
+﻿using G_NET106_OOP_01.part_2;
+using G_NET106_OOP_01.part1_Q1;
+//using G_NET106_OOP_01.part1_Q2;
 
 namespace G_NET106_OOP_01
 {
@@ -77,6 +78,95 @@ namespace G_NET106_OOP_01
             //How can private fields and public properties improve this design?
             // i edited the struct with encapsulating fields
             #endregion
+            #endregion
+
+            #region part 2 smart delivery managment system 
+            #region 1
+            //1.	Create a DeliveryAddress struct with
+            DeliveryAddress dA1 = new DeliveryAddress()
+            {
+                buildingNumber = 1,
+                city = "cairo",
+                street = "gamal abdelnaser"
+            };
+            DeliveryAddress dA2 = new DeliveryAddress()
+            {
+                buildingNumber = 2,
+                city = "alexandria",
+                street = "elgesh"
+            };
+            dA2 = dA1;
+            dA2.street = "fawzy moaaz";
+            dA2.city = "tanta";
+            dA2.buildingNumber = 3;
+
+            Console.WriteLine($"original address : {dA1.GetFullAddress()}");
+            Console.WriteLine($"copied address : {dA2.GetFullAddress()}");
+            #endregion
+            
+
+
+            Console.WriteLine("Enter Shipment 1 Data ");
+            Console.WriteLine("tracking code:");
+            string code;
+            do
+            {
+                 code = Console.ReadLine();
+
+            }while( string.IsNullOrEmpty( code ) );
+      
+            Console.WriteLine("please enter describtion:");
+
+
+            string describtion;
+            do {
+                describtion = Console.ReadLine();
+            } while (string.IsNullOrWhiteSpace(describtion));
+            Console.WriteLine("Weight:");
+            double weight;
+            bool isWeight;
+            do
+            {
+                isWeight = double.TryParse(Console.ReadLine(), out weight);
+            } while (!isWeight);
+            Console.WriteLine("Delivery Fee: ");
+            decimal deliveryFee;
+            bool isDeliveryFee;
+            do
+            {
+                isDeliveryFee= decimal.TryParse(Console.ReadLine(), out deliveryFee);
+            }while(!isDeliveryFee);
+
+            Console.WriteLine("city:");
+            string city;
+            do
+            {
+                city = Console.ReadLine();
+            }while(string.IsNullOrWhiteSpace(city));
+            Console.WriteLine("street:");
+            string street;
+            do
+            {
+               street =  Console.ReadLine();
+            }while(string.IsNullOrWhiteSpace(street));
+            Console.WriteLine("building number:");
+            int buildingNumber;
+            bool isBuildingNumber;
+            do
+            {
+                isBuildingNumber = int.TryParse(Console.ReadLine(), out buildingNumber);
+
+            }while(!isBuildingNumber);
+            Shipment shipment = new Shipment( code ,describtion , weight , deliveryFee  );
+            DeliveryAddress deliveryAddress = new DeliveryAddress(city , street , buildingNumber);
+            Console.WriteLine("Shipment added successfully.");
+
+            Console.WriteLine("--- All Shipments ---");
+            shipment.PrintShipment();
+            Console.WriteLine(deliveryAddress.GetFullAddress());
+
+
+
             #endregion
         }
     }
